@@ -1751,7 +1751,9 @@ QPixmap QtWebKitWebWidget::getThumbnail()
 
 	painter.end();
 
-	pixmap = pixmap.scaled(thumbnailSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+	qreal dpiRatio = this->devicePixelRatio();
+	pixmap = pixmap.scaled(thumbnailSize * dpiRatio, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+	pixmap.setDevicePixelRatio(dpiRatio);
 
 	newView->deleteLater();
 
