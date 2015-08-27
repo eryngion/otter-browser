@@ -730,17 +730,7 @@ void TabBarWidget::updateButtons()
 				}
 				else
 				{
-					QStyleOption option;
-					option.rect = QRect(0, 0, 16, 16);
-
-					QPixmap pixmap(16, 16);
-					pixmap.fill(Qt::transparent);
-
-					QPainter painter(&pixmap);
-
-					style()->drawPrimitive(QStyle::PE_IndicatorTabClose, &option, &painter, this);
-
-					label->setPixmap(pixmap);
+					label->setPixmap(Utils::getIcon(QLatin1String("dialog-close")).pixmap(16, 16));
 				}
 			}
 
