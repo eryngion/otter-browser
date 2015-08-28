@@ -1714,7 +1714,7 @@ QIcon QtWebKitWebWidget::getIcon() const
 
 QPixmap QtWebKitWebWidget::getThumbnail()
 {
-	qreal dpiRatio = this->devicePixelRatio();
+	const qreal dpiRatio = this->devicePixelRatio();
 
 	if (!m_thumbnail.isNull() && !isLoading() && m_thumbnail.devicePixelRatio() == dpiRatio)
 	{
